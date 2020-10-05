@@ -36,4 +36,18 @@ class IrisModel:
 
     def draw_scatter(self):
         X = self.x
-        
+        plt.scatter(X[:50, 0], X[:50, 1], color='red', marker='o', label='setosa')
+        plt.scatter(X[50:100, 0], X[50:100, 1], color='blue', marker='x', label='versicolor')
+        plt.xlabel('sepal length[cm]')
+        plt.ylabel('petal length[cm]')
+        plt.legend(loc='upper left')
+        plt.show()
+
+    def draw_errors(self):
+        X = self.x
+        y = self.y
+        self.clf.fit(X, y)
+        plt.plot(range(1, len(self.clf.errors_) + 1), self.clf.errors_, marker='o')
+        plt.xlabel('Epoch')
+        plt.ylabel('Number of Errors')
+        plt.show()
