@@ -21,7 +21,10 @@ class CrimeModel:
         print('----------- CRIME & POLICE -----------')
         crime = self.get_crime()
         print(f'{crime.head()}')
-        self.get_station(crime)
+        # self.get_station(crime)
+        crime_police = self.get_crime_police()
+        print(f'{crime_police.head()}')
+        print(f'{crime_police.columns}')
 
     def get_crime(self):
         reader = self.reader
@@ -70,6 +73,15 @@ class CrimeModel:
         reader.context = os.path.join(baseurl,'saved_data')
         reader.fname = 'crime_police.csv'
         crime.to_csv(reader.new_file())
+
+    def get_crime_police(self):
+        reader = self.reader
+        reader.context = os.path.join(baseurl, 'saved_data')
+        reader.fname = 'crime_police.csv'
+        reader.new_file()
+        crime_police = reader.csv_to_dframe()
+        print(f'{crime_police.head()}')
+        return crime_police
 
 if __name__ == '__main__':
     crime = CrimeModel()
