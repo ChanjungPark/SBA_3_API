@@ -2,6 +2,7 @@ from dataclasses import dataclass
 import pandas as pd
 import os
 import xlrd
+import googlemaps
 
 '''
 pandas version 1.x 이상 encoding='UTF-8' 불필요
@@ -33,3 +34,5 @@ class FileReader:
         print(f'PANDAS VERSION: {pd.__version__}')
         return pd.read_excel(self.new_file(), header=header, usecols=usecols)
         
+    def create_gmaps(self):
+        return googlemaps.Client(key='AIzaSyDzuzlic7l3NcL7l2QtTpoGBHgC5JSyzhk')  # 개인 구글맵 api key 넣으면 된다
