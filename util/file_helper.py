@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import pandas as pd
 import os
 import xlrd
-import googlemaps
+import gmaps
 import json
 
 '''
@@ -36,7 +36,7 @@ class FileReader:
         return pd.read_excel(self.new_file(), header = header, usecols = usecols)
 
     def create_gmaps(self):
-        return googlemaps.Client(key='')  # 개인 구글맵 api key 넣으면 된다
+        return gmaps.Client(key='')  # 개인 구글맵 api key 넣으면 된다
 
     def json_load(self):
         return json.load(open(self.new_file()),encoding = 'UTF-8')
