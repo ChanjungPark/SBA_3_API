@@ -33,7 +33,7 @@ class UsUnemployment:
         )
         folium.LayerControl().add_to(map)
         reader = self.reader
-        reader.context = os.path.join(baseurl, 'data')
+        reader.context = os.path.join(baseurl, 'saved_data')
         reader.fname = 'usa.html'
         map.save(reader.new_file())
 
