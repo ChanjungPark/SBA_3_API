@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import xlrd
 import googlemaps
+import json
 
 '''
 pandas version 1.x 이상 encoding='UTF-8' 불필요
@@ -25,14 +26,17 @@ class FileReader:
     lable : str = ''
 
     def new_file(self) -> str:
-        return os.path.join(self.context, self.fname)
+        return os.path.join(self.context,self.fname)
 
     def csv_to_dframe(self) -> object:
         return pd.read_csv(self.new_file(), encoding='UTF-8', thousands=',')
 
     def xls_to_dframe(self, header, usecols) -> object:
         print(f'PANDAS VERSION: {pd.__version__}')
-        return pd.read_excel(self.new_file(), header=header, usecols=usecols)
-        
+        return pd.read_excel(self.new_file(), header = header, usecols = usecols)
+
     def create_gmaps(self):
         return googlemaps.Client(key='')  # 개인 구글맵 api key 넣으면 된다
+
+    def json_load(self):
+        return json.load(open(self.new_file()),encoding = 'UTF-8')
