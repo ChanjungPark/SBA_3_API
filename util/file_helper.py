@@ -36,7 +36,7 @@ class FileReader:
         return pd.read_excel(self.new_file(), header=header, usecols=usecols)
 
     def create_gmaps(self):
-        return googlemaps.Client(key='AIzaSyByzMrMadriMlFacmk41QE-e5nbAJSsOhU')  # 개인 구글맵 api key 넣으면 된다
+        return googlemaps.Client(key='')  # 개인 구글맵 api key 넣으면 된다
 
     def json_load(self):
         return json.load(open(self.new_file(), encoding='UTF-8'))
