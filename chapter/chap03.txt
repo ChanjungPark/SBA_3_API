@@ -2,4 +2,14 @@ nn ?
 
 neuron vs nerual network ?
 
-단수, 복수
+단수 , 복수
+
+json : {} , []
+java : Member List<Member>, 객체, 컬렉션
+
+scalar vector
+
+
+neu -- ron : 이진 출력 Y / N   0,1   bool 함수
+percept -- ron : 인식하는 뉴런   확률 (가중치)   bool 함수 + 계단 함수
+adalin : bool 함수 + 활성화 함수 + 계단 함수
