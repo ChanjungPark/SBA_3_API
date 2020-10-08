@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import xlrd
 import googlemaps
+# conda install -c conda-forge gmaps
 import json
 
 '''

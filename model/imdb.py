@@ -72,7 +72,7 @@ class Imdb:
     모델 훈련
     '''
     def train_model(self):
-        self.model.fit(self.train_data.shuffle(10000).batch(512),  # 512 = 2 ^ 9
+        self.model.fit(self.train_data.shuffle(10000).batch(512),  # 512 = 2^9
                         epochs=20, validation_data=self.validation_data.batch(512),verbose = 1)
 
     '''
