@@ -5,6 +5,8 @@ from tensorflow import keras
 import matplotlib.pyplot as plt
 import numpy as np
 
+# https://www.tensorflow.org/tutorials/keras/classification?hl=ko 참고
+
 print(tf.version.VERSION)
 
 class FashionMnist:

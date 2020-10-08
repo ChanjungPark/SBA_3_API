@@ -1,3 +1,7 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+baseurl = os.path.dirname(os.path.abspath(__file__))
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -20,21 +24,12 @@ class IrisModel:
         Int64Index([0, 1, 2, 3, 4], dtype='int64')
         '''
 
-        # Iris-setosa 와 versicolor 선택 (MVC 는 이진분류만 할 수 있다)
+        # Iris-setosa 와 versicolor 선택 (MCP 는 이진분류만 할 수 있다)
         t = self.iris.iloc[0:100,4].values
         self.y = np.where(t == 'Iris-setosa', -1, 1)
         # 꽃받침 길이, 꽃잎 추출
         self.X = self.iris.iloc[0:100, [0,2]].values
         self.clf = Perceptron(eta = 0.1, n_iter=10)
-
-    def get_iris(self):
-        return self.iris
-
-    def get_X(self):
-        return self.X
-
-    def get_y(self):
-        return self.y
 
     def draw_scatter(self):
         X = self.X
@@ -145,3 +140,11 @@ class IrisModel:
 
         plt.tight_layout()
         plt.show()
+
+if __name__ == '__main__':
+    iris = IrisModel()
+    # iris.draw_scatter()
+    # iris.draw_errors()
+    # iris.plot_decision_regions()
+    # iris.draw_adaline_graph()
+    # iris.draw_adaline_gd_graph()

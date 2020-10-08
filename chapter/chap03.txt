@@ -34,6 +34,7 @@ nn 활성화함수 exists, 시그모이드, 이산 정수 0,1
     Ai 겨울
     nn 단위 -> 복수형 nnn (x)
 -> nn 을 layer 라고 부르고 있습니다.
+-> layer 가 1개
 -> dnn (deep) { algorithm + nn + dframe + frunction(main) } -> model
 cnn 레루, 연속 실수
 runnablelstm

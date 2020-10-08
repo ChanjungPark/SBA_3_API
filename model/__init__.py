@@ -9,5 +9,5 @@ if __name__ == '__main__':
     # iris.draw_scatter()
     # iris.draw_errors()
     # iris.plot_decision_regions()
-    iris.draw_adaline_graph()
+    # iris.draw_adaline_graph()
     # iris.draw_adaline_gd_graph()
